@@ -1,4 +1,4 @@
-package br.com.fiap.epictask;
+package br.com.fiap.metafit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

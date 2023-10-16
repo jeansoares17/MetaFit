@@ -1,4 +1,4 @@
-package br.com.fiap.epictask.config;
+package br.com.fiap.metafit.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +10,11 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-            .oauth2Login(Customizer.withDefaults())
-            .formLogin(Customizer.withDefaults())
-            .build();
+                .oauth2Login(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults())
+                .build();
     }
-    
+
 }

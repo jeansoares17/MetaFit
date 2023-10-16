@@ -12,9 +12,9 @@
 <body class="grey lighten-2">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Epic Task</a>
+            <a href="#" class="brand-logo">Meta Fit</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="active"><a href="/task">pendentes</a></li>
+                <li class="active"><a href="/meta">pendentes</a></li>
                 <li><a href="#">concluídas</a></li>
                 <li><a href="#">usuários</a></li>
             </ul>
@@ -28,19 +28,20 @@
         <h2>Tarefas Pendentes</h2>
 
         <div class="row">
-            <div class="col s12 m6 l4" th:each="task: ${tasks}">
+            <div class="col s12 m6 l4" th:each="meta: ${metas}">
                 <div class="card">
                     <div class="card-content">
                         <div class="progress">
-                            <div class="determinate" th:style="${'width:' + task.status + '%'}"></div>
+                            <div class="determinate" th:style="${'width:' + meta.status + '%'}"></div>
                         </div>
-                        <span class="card-title" th:text="${task.title}"></span>
-                        <p th:text="${task.description}"></p>
-                        <span data-badge-caption="pontos" class="badge blue white-text" th:text="${task.score}"></span>
+                        <span class="card-title" th:text="${meta.title}"></span>
+                        <span class="card-title" th:text="${meta.type}"></span>
+                        <p th:text="${meta.description}"></p>
+                        <span data-badge-caption="pontos" class="badge blue white-text" th:text="${meta.score}"></span>
 
                     </div>
                     <div class="card-action">
-                        <a th:href="${'/task/delete/' + task.id}" class="btn red">
+                        <a th:href="${'/meta/delete/' + meta.id}" class="btn red">
                             <i class="material-icons">delete</i>
                         </a>
                     </div>
@@ -51,7 +52,7 @@
     </main>
 
     <div class="fixed-action-btn">
-        <a href="/task/new" class="btn-floating btn-large blue">
+        <a href="/meta/new" class="btn-floating btn-large blue">
             <i class="large material-icons">add</i>
         </a>
     </div>

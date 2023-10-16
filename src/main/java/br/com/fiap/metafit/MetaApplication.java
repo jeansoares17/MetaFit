@@ -1,13 +1,13 @@
-package br.com.fiap.epictask;
+package br.com.fiap.metafit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EpictaskApplication {
+public class MetaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EpictaskApplication.class, args);
+		SpringApplication.run(MetaApplication.class, args);
 	}
 
 }

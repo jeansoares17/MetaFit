@@ -27,7 +27,7 @@
         <h2>Cadastrar Tarefa</h2>
 
         <div class="card">
-            <form action="/task" method="post" th:object="${task}">
+            <form action="/meta" method="post" th:object="${meta}">
                 <div class="card-content">
                     <div class="input-field">
                         <input 
@@ -37,6 +37,16 @@
                         >
                         <label for="title">Título</label>
                         <span class="helper-text red-text" th:errors="*{title}"></span>
+                    </div>
+
+                    <div class="input-field">
+                        <input 
+                            type="text" 
+                            th:field="*{type}"
+                            th:classappend="${#fields.hasErrors('type')} ? invalid"
+                        >
+                        <label for="title">Tipo</label>
+                        <span class="helper-text red-text" th:errors="*{type}"></span>
                     </div>
                     
                     <div class="input-field">
@@ -62,13 +72,13 @@
 
                 </div>
                 <div class="card-action right-align">
-                    <a href="/task" class="btn grey">
+                    <a href="/meta" class="btn grey">
                         <i class="material-icons left">chevron_left</i>
                         cancelar
                     </a>
                     <button class="btn">
                         <i class="material-icons left">check</i>
-                        cadastrar
+                        registrar
                     </button>
                 </div>
             </form>
