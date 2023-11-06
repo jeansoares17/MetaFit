@@ -1,4 +1,4 @@
-package br.com.fiap.metafit.task;
+package br.com.fiap.metafit.meta;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

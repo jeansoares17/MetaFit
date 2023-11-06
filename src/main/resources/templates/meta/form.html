@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
-</head>
+<head th:replace="~{_template :: head('cadastrar')}"></head>
+
 
 <body class="grey lighten-2">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Epic Task</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="active"><a href="/task">pendentes</a></li>
-                <li><a href="#">concluídas</a></li>
-                <li><a href="#">usuários</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav th:replace="~{_template :: #navbar}"></nav>
 
     <main class="container">
 
         <h2>Cadastrar Tarefa</h2>
 
         <div class="card">
-            <form action="/meta" method="post" th:object="${meta}">
+            <form th:action="${'/meta'}" method="post" th:object="${meta}">
                 <div class="card-content">
                     <div class="input-field">
                         <input 
@@ -37,16 +22,6 @@
                         >
                         <label for="title">Título</label>
                         <span class="helper-text red-text" th:errors="*{title}"></span>
-                    </div>
-
-                    <div class="input-field">
-                        <input 
-                            type="text" 
-                            th:field="*{type}"
-                            th:classappend="${#fields.hasErrors('type')} ? invalid"
-                        >
-                        <label for="title">Tipo</label>
-                        <span class="helper-text red-text" th:errors="*{type}"></span>
                     </div>
                     
                     <div class="input-field">
@@ -78,7 +53,7 @@
                     </a>
                     <button class="btn">
                         <i class="material-icons left">check</i>
-                        registrar
+                        cadastrar
                     </button>
                 </div>
             </form>
